@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: bank-service
+  config:
+    import: optional:configserver:http://127.0.0.1:8081
+  profiles:
+    active: default

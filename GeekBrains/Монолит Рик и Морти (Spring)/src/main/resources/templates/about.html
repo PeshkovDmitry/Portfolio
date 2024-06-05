@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <title>Список героев Rick and Morty</title>
+    </head>
+    <body>
+    <main>
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1 class="jumbotron-heading"><span th:text="${character.name}"></span></h1>
+            </div>
+        </section>
+        <section class="album py-5 bg-light">
+            <div class="container">
+                <div class="card mb-4 box-shadow">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <img class="card-img-top" th:alt="${character.name}" style="width: 300px; height: 300px; display: block; border-radius: 5px" th:src="${character.image}">
+                        <div class="card-body">
+                            <p class="card-text">Статус: <span th:text="${character.status}"></span></p>
+                            <p class="card-text">Вид: <span th:text="${character.species}"></span></p>
+                            <p class="card-text">Пол: <span th:text="${character.gender}"></span></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                        <a class="btn btn-sm btn-outline-secondary" th:href="@{'/?page='+${currentPage}}">К списку героев</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    </body>
+</html>
